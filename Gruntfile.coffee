@@ -133,7 +133,7 @@ module.exports = (grunt) ->
 				options:
 					
 					# `name` and `out` is set by grunt-usemin
-					baseUrl: "app/scripts"
+					baseUrl: ".tmp/scripts"
 					optimize: "none"
 					
 					# TODO: Figure out how to make sourcemaps work with grunt-usemin
@@ -216,7 +216,14 @@ module.exports = (grunt) ->
 					cwd: "<%= yeoman.app %>"
 					dest: "<%= yeoman.dist %>"
 					src: ["*.{ico,txt}", ".htaccess", "images/{,*/}*.{webp,gif}", "styles/fonts/*"]
+				,
+					expand: true
+					dot: true
+					cwd: "<%= yeoman.app %>"
+					dest: ".tmp"
+					src: ["components/{,*/}*.js", "scripts/vendor/{,*/}*.js"]
 				]
+
 
 		concurrent:
 			server: ["coffee:dist", "compass:server"]
@@ -236,5 +243,5 @@ module.exports = (grunt) ->
 		grunt.task.run ["clean:server", "concurrent:server", "livereload-start", "connect:livereload", "open", "watch"]
 
 	grunt.registerTask "test", ["clean:server", "concurrent:test", "connect:test", "mocha"]
-	grunt.registerTask "build", ["clean:dist", "useminPrepare", "concurrent:dist", "requirejs", "cssmin", "concat", "uglify", "copy", "rev", "usemin"]
+	grunt.registerTask "build", ["clean:dist", "useminPrepare", "concurrent:dist", "copy", "requirejs", "cssmin", "concat", "uglify", "rev", "usemin"]
 	grunt.registerTask "default", ["jshint", "test", "build"]
