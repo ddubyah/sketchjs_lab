@@ -2,7 +2,11 @@
 
 ## Simple project to play with [Sketch.js](http://soulwire.github.io/sketch.js/)
 
-Just a bit of fun to experiment with [Sketch.js](http://soulwire.github.io/sketch.js/)
+Just a bit of fun to experiment with [Sketch.js](http://soulwire.github.io/sketch.js/). 
+
+[See it in action here](http://ddubyah.github.io/sketchjs_lab/)
+
+---
 
 Based loosely on these codepen.io examples:
 
