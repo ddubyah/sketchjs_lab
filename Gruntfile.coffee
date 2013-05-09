@@ -143,7 +143,7 @@ module.exports = (grunt) ->
 					# http://requirejs.org/docs/errors.html#sourcemapcomments
 					preserveLicenseComments: false
 					useStrict: true
-					wrap: true
+					wrap: false
 
 		
 		#uglify2: {} // https://github.com/mishoo/UglifyJS2
@@ -221,7 +221,7 @@ module.exports = (grunt) ->
 					dot: true
 					cwd: "<%= yeoman.app %>"
 					dest: ".tmp"
-					src: ["components/{,*/}*.js", "scripts/vendor/{,*/}*.js"]
+					src: ["components/**/*.js", "scripts/vendor/{,*/}*.js"]
 				]
 
 

@@ -50,8 +50,9 @@ define [
 
 
 		demo.draw = ->
-			# demo.globalCompositeOperation  = 'lighter';
+			demo.globalCompositeOperation  = 'darker';
 			demo.fade(demo)
+			demo.globalCompositeOperation  = 'lighter';
 			particle.draw demo for particle in particles
 			
 
